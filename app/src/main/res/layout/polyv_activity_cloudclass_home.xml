@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".watch.PolyvCloudClassHomeActivity">
+
+    <FrameLayout
+        android:id="@+id/player_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/videoview_height_port"
+        android:background="@color/gray" />
+
+
+    <include
+        android:id="@+id/chat_container_layout"
+        layout="@layout/polyv_chat_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/player_container" />
+
+
+    <com.easefun.polyv.commonui.widget.PolyvTouchContainerView
+        android:id="@+id/video_ppt_container"
+        android:layout_width="@dimen/ppt_width"
+        android:layout_height="@dimen/ppt_height"
+        android:visibility="invisible">
+
+    </com.easefun.polyv.commonui.widget.PolyvTouchContainerView>
+
+
+    <!--com.easefun.polyv.cloudclassdemo.watch.linkMickMic.widget.PolyvLinkMicListView-->
+    <!--android:id="@+id/link_mic_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/ppt_height"-->
+    <!--android:visibility="invisible" />-->
+    <ViewStub
+        android:layout="@layout/link_mic_layout"
+        android:id="@+id/polyv_link_mic_stub"
+        android:inflatedId="@+id/polyv_link_mic_id"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/ppt_height" />
+
+
+    <ViewStub
+        android:layout="@layout/normal_live_link_mic_layout"
+        android:id="@+id/polyv_normal_live_link_mic_stub"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_60" />
+
+    <com.easefun.polyv.commonui.widget.PolyvAnswerView
+        android:id="@+id/answer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/polyv_chat_input_imageviewer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
